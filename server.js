@@ -1,3 +1,4 @@
+const cookieParser = require("cookie-parser");
 const userRoutes = require('./routes/userRoutes');
 const mongoose = require('mongoose');
 const express = require('express');
@@ -22,7 +23,9 @@ connection.once('open',()=>{
 
 
 //MidleWare
-
+app.use(express.json());
+express.urlencoded({extended:true});
+app.use(cookieParser());
 
 //routes
 app.use(userRoutes);
