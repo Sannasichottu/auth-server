@@ -264,7 +264,8 @@ const userController = {
         } catch (err) {
             res.status(500).json({msg:err.message})
         }
-    }
+    },
+
 };
 
 module.exports = userController;

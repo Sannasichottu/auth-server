@@ -1,5 +1,6 @@
 const cookieParser = require("cookie-parser");
 const userRoutes = require('./routes/userRoutes');
+const uploadRoutes = require('./routes/uploadRoutes');
 const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
@@ -26,9 +27,11 @@ connection.once('open',()=>{
 app.use(express.json());
 express.urlencoded({extended:true});
 app.use(cookieParser());
+app.use('/uploads',express.static("uploads"));
 
 //routes
 app.use(userRoutes);
+app.use(uploadRoutes);
 
 
 const PORT = 3001;

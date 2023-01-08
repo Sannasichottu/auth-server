@@ -20,7 +20,7 @@ const userSchema = new Schema(
         },
         avatar:{
             type:String,
-            default:''
+            default:'https://res.cloudinary.com/sanu-code/image/upload/v1673191294/avatar-auth/avatar-G_i8lsh8.png'
         }
     },{
         timestamps :true
