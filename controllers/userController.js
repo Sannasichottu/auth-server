@@ -175,7 +175,7 @@ const userController = {
             const user = await User.findById(req.user.id).select("-password");
 
             //return user
-            res.status(200).json({user })
+            res.status(200).json(user)
         } catch (err) {
             res.status(500).json({msg : err.message})
         }
